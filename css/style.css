@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Nft';
+  src: url('../assets/F_BOLD.woff') format('woff');
+}
+
+body {
+  font-family: "Nft";
+  background: #e5e8f0;
+  padding: 0px;
+  margin: 0px;
+  color: #0a0a0a;
+  font: 1.5em;
+}
+
+h1 {
+  color: #fff;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-block-start: 0.5em;
+  margin-block-end: 1.5em;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.25);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 6em
+}
+
+header nav img {
+  height: 80px;
+  vertical-align: middle
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  list-style-type: none;
+}
+
+header nav ul li {
+  margin: 1em 3em;
+}
+
+header nav ul li a {
+  color: #222;
+  text-decoration: none;
+}
+
+section.landing {
+    background: url(../img/background.png) center center no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 90vh;
+}
+
+section.landing section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  vertical-align: middle;
+  padding: 0 6em;
+}
+
+section.landing section div,
+section.landing section article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+section.landing section article p {
+  color: #fff;
+}
