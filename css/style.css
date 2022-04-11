@@ -26,15 +26,58 @@ h1 {
   margin-block-end: 1.5em;
 }
 
+.white {
+  color: #fff;
+}
+
+div.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+a.primary-btn {
+  color: #fff;
+  background: linear-gradient(90deg, #B1D26F 0.05%, #60E7CE 100.16%);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  font-size: 1.1rem;
+  padding: 12px 35px;
+  display: inline-block;
+  transform: skew(21deg);
+}
+
+a.primary-btn span {
+  display: inline-block;
+  transform: skew(-21deg);
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+
 header {
   background-color: #fff;
   box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  z-index: 1001;
+  width: 100%;
+  height: 6em;
 }
 
 header nav {
   display: flex;
   justify-content: space-between;
   padding: 0.5em 6em
+}
+
+header nav a {
+  padding: 0;
 }
 
 header nav img {
@@ -59,10 +102,11 @@ header nav ul li a {
 }
 
 section.landing {
-    background: url(../img/background.png) center center no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 90vh;
+  background: url(../img/background.png) center center no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: fit-content;
+  padding-top: 6em;
 }
 
 section.landing section {
@@ -72,16 +116,239 @@ section.landing section {
   padding: 0 6em;
 }
 
-section.landing section div,
-section.landing section article {
+section.landing section>div,
+section.landing section>article {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  /* height: 100%; */
 }
 
 section.landing section article p {
   color: #fff;
 }
 
-/* git init */
+article.our-partners ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding: 1em 0 3em 0;
+  margin-block-end: 0;
+}
+
+h3.center {
+  width: 100%;
+  text-align: center;
+}
+
+section.our-team {
+  background: url(../img/particles.png) center center no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: fit-content;
+}
+
+section.our-team > h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 4em 0 2em 0;
+}
+
+section.our-team section {
+    max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.our-team div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+  padding-bottom: 6em;
+}
+
+section.our-team div article {
+  background: linear-gradient(91.95deg, rgba(0, 0, 0, 0.8) 1.14%, rgba(0, 0, 0, 0.63) 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(45px);
+  border-radius: 30px;
+  padding: 1em;
+  color: #fff;
+  transition: ease-in-out 0.3s;
+}
+
+section.our-team div article:hover {
+  transform: scale(1.05);
+}
+
+section.our-team div article:hover img {
+  filter: none;
+  animation: glitch 1s linear infinite;
+}
+
+/* background: linear-gradient(91.95deg, rgba(112, 112, 246, 0.86) 1.14%, rgba(97, 227, 208, 0.72) 100%); */
+
+section.our-team div article img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5em;
+  border-radius: 15px;
+  filter: grayscale(0.75);
+  transition: ease-in-out 0.3s;
+}
+
+section.our-team div article h3, section.our-team div article h4 {
+  margin-block-start: 0;
+  margin-block-end: 0.5rem;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+section.blogs {
+  background: url(../img/background.png) center center no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: fit-content;
+}
+
+section.blogs > h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 4em 0 2em 0;
+}
+
+section.blogs section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.blogs section div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  padding-bottom: 6em;
+}
+
+section.blogs section div article {
+  background: linear-gradient(91.95deg, rgba(0, 0, 0, 0.8) 1.14%, rgba(0, 0, 0, 0.63) 100%);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(45px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 30px;
+}
+
+/* Blog styling */
+
+section.blog-header {
+    background: url(../img/background.png) center center no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+section.blog-header h1 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding: 2em 0 2em 2em;
+}
+
+section.blog-header img {
+  width: 4em;
+  height: 4em;
+  margin-left: 2em;
+}
+
+section.author h2 {
+  width: 100%;
+  text-align: center;
+  padding-top: 2em;
+}
+
+section.author article {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(91.95deg, rgba(0, 0, 0, 0.8) 1.14%, rgba(0, 0, 0, 0.63) 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(45px);
+  padding: 1em;
+  margin: 0 6em;
+  border-radius: 30px;
+  color: #fff;
+}
+
+section.author article h3 {
+  margin-block-end: 0;
+}
+
+section.author article h4 {
+  margin-block-start: 0.5rem;
+}
+
+section.author article img {
+  width: 270px;
+  height: 270px;
+}
+
+section.author article div {
+  padding: 0 1em;
+}
+
+section.paragraph p {
+  margin: 6em;
+}
+
+section.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+/* end blog styling */
+
+@media screen and (max-width: 768px) {
+  header nav {
+    padding: 0.5em 1em;
+  }
+
+  section.blog-header h1 {
+    padding: 1em;
+    font-size: 2em;
+  }
+
+  section.author article {
+    flex-direction: column;
+    margin: 0 1em;
+  }
+
+  section.paragraph p {
+    margin: 3em;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  section.author article img {
+    width: 100%;
+    height: auto;
+  }
+
+  section.blog-header h1 {
+    font-size: 1.5em;
+  }
+}
