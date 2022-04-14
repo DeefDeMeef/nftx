@@ -18,6 +18,10 @@ body {
   font: 1.5em;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   color: #fff;
   font-size: 3em;
@@ -47,6 +51,22 @@ a.primary-btn {
   padding: 12px 35px;
   display: inline-block;
   transform: skew(21deg);
+}
+
+a.secondary-btn {
+  color: #000;
+  background: linear-gradient(90deg, #B1D26F 0.05%, #60E7CE 100.16%);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  font-size: 1.1rem;
+  padding: 12px 35px;
+  width: 100%;
+  display: inline-block;
+  border-radius: 15px;
+  transition: ease-in-out 0.3s;
 }
 
 a.primary-btn span {
@@ -219,7 +239,7 @@ section.our-team div article h3, section.our-team div article h4 {
 
 section.blogs {
   background: url(../img/background.png) center center no-repeat;
-  background-size: 100%;
+  /* background-size: 100%; */
   width: 100%;
   height: fit-content;
 }
@@ -236,20 +256,44 @@ section.blogs section {
   margin-right: auto;
 }
 
-section.blogs section div {
+section.blogs section > div {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
   padding-bottom: 6em;
 }
 
+section.blogs section div article img {
+  width: 100%;
+}
+
 section.blogs section div article {
   background: linear-gradient(91.95deg, rgba(0, 0, 0, 0.8) 1.14%, rgba(0, 0, 0, 0.63) 100%);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(45px);
-/* Note: backdrop-filter has minimal browser support */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(45px);
+  border-radius: 30px;
+  color: #fff;
+  padding: 1em;
+}
 
-border-radius: 30px;
+@media screen and (max-width: 1230px) {
+  section.blogs section > div {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.our-team div {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (m-width: 1230px) {
+  section.blogs section > div {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.our-team div {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 /* Blog styling */
@@ -262,6 +306,7 @@ section.blog-header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-top: 6em;
 }
 
 section.blog-header h1 {
