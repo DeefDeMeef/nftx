@@ -123,7 +123,7 @@ header nav ul li a {
 
 section.landing {
   background: url(../img/background.png) center center no-repeat;
-  background-size: 100%;
+  /* background-size: 100%; */
   width: 100%;
   height: fit-content;
   padding-top: 6em;
@@ -279,20 +279,55 @@ section.blogs section div article {
 @media screen and (max-width: 1230px) {
   section.blogs section > div {
     grid-template-columns: 1fr 1fr;
+    margin: 3em;
   }
 
   section.our-team div {
     grid-template-columns: 1fr 1fr 1fr;
+    margin: 3em;
   }
 }
 
-@media screen and (m-width: 1230px) {
+.landing_img, header nav ul {
+  display: '';
+}
+
+article.our-partners ul li {
+  padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+  section.landing section {
+    grid-template-columns: 1fr;
+  }
+
+  section.blogs {
+    background: url(../img/background.png) center center repeat;
+  }
+
   section.blogs section > div {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin: 3em;
   }
 
   section.our-team div {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .landing_img, header nav ul {
+    display: none;
+  }
+
+  article.our-partners ul {
+    flex-direction: column;
+  }
+
+  article.our-partners ul li {
+    padding: 1em 0;
+  }
+
+  section.landing section {
+    padding: 3em;
   }
 }
 
